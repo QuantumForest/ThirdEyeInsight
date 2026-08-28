@@ -53,7 +53,7 @@ Cette classification n'a besoin d'être faite qu'une fois par carte : elle est e
       <sub><b>Construction du Deck</b></sub>
     </td>
     <td align="center" width="50%">
-      <img width="1118" height="238" alt="image" src="https://github.com/user-attachments/assets/7be81c7d-7354-4a31-a596-83eacaa2b12c" /><br/>
+      <img width="1120" height="685" alt="image" src="https://github.com/user-attachments/assets/9d99396a-58dd-4cf1-a0b5-1d3be1fdff8d" /><br/>
       <sub><b>Combos Starters</b></sub>
     </td>
   </tr>
@@ -69,17 +69,15 @@ Cette classification n'a besoin d'être faite qu'une fois par carte : elle est e
   </tr>
 </table>
 
-> Pour que ce tableau s'affiche : crée un dossier `screenshots/` à la racine du dépôt, et places-y 4 captures d'écran nommées exactement `construction.png`, `combos.png`, `scenarios.png` et `analyse.png` (ou change les noms ci-dessus pour correspondre aux tiens). Si tu n'as que 2 captures pour l'instant, retire simplement la deuxième ligne `<tr>...</tr>` du tableau.
-
 ## Installation
 
 ### Télécharger l'exécutable (le plus simple)
 
 Pas besoin d'installer Python : télécharge directement le `.exe` depuis la page [**Releases**](../../releases) du dépôt, dans un dossier dédié, et lance-le.
 
-> Place l'exécutable dans son propre dossier avant de le lancer pour la première fois — l'application y créera automatiquement `decks/`, `exports/`, `imports/` et `.cache/` juste à côté. Aucune installation, aucune trace ailleurs sur le système.
+> Place l'exécutable dans son propre dossier avant de le lancer pour la première fois — l'application y créera automatiquement `decks/`, `exports/`, `imports/` et `.cache/` juste à côté. Aucune installation requise.
 
-### Depuis les sources (pour développer ou sur Linux)
+### Depuis les sources (pour développer)
 
 #### Prérequis
 
@@ -112,8 +110,6 @@ Tous les decks, combos, conditions et scénarios sont sauvegardés localement da
 
 ## Compiler un exécutable autonome
 
-*Cette section concerne la préparation d'une nouvelle [Release](../../releases) — si tu veux juste utiliser l'application, télécharge directement le `.exe` déjà compilé (voir [Installation](#installation) ci-dessus).*
-
 L'exécutable est généré via [PyInstaller](https://pyinstaller.org/).
 
 ### Sur Linux (Debian et dérivés)
@@ -145,7 +141,7 @@ pyinstaller --onefile --windowed --name ThirdEyeInsight ^
 
 L'exécutable final se trouve dans `dist\ThirdEyeInsight.exe`.
 
-> **Portable par conception** : où que tu déplaces l'exécutable compilé, les dossiers `decks/`, `exports/`, `imports/` et `.cache/` (base de cartes, images, logs) se créent automatiquement à côté de lui — jamais dans un dossier temporaire système.
+> **Portable par conception** : où que tu déplaces l'exécutable compilé, les dossiers `decks/`, `exports/`, `imports/` et `.cache/` (base de cartes, images, logs) se créent automatiquement à côté de lui.
 
 ## Structure du projet
 
@@ -180,10 +176,6 @@ pytest tests/ -v
 ## Remerciements
 
 - [YGOPRODeck](https://ygoprodeck.com/) pour son API publique de base de cartes et d'images, utilisée conformément à ses [règles d'usage](https://ygoprodeck.com/api-guide/).
-
-## Licence
-
-*(À compléter — MIT, GPL, ou autre selon ton choix.)*
 
 ---
 
