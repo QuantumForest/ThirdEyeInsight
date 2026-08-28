@@ -178,7 +178,7 @@ pytest tests/ -v
 
 ## Licence
 
-[Voir la licence](LICENSE) pour le détail des conditions d'utilisation.
+[Voir la licence](LICENCE) pour le détail des conditions d'utilisation.
 
 ---
 
