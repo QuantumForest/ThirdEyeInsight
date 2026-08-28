@@ -4,9 +4,9 @@
 
 ## Pourquoi cet outil ?
 
-La plupart des joueurs construisent leur deck "au feeling" : ils copient une liste vue en ligne, ajustent quelques cartes selon leur intuition, et espèrent que ça marche. Le problème, c'est que l'intuition se trompe souvent sur des questions pourtant très concrètes — *"si je passe de 2 à 3 exemplaires de cette carte, à quel point ça change vraiment mes chances de main jouable ?"*, *"est-ce que mon deck dépend d'une poignée de cartes précises, ou l'ouverture est-elle bien répartie ?"*, *"dois-je vraiment sider cette carte contre ce matchup, ou est-ce que je perds plus que je ne gagne ?"* — ce sont des questions de probabilités, pas de ressenti, et le cerveau humain est notoirement mauvais pour estimer des probabilités à l'instinct.
+La plupart des joueurs construisent leur deck "au feeling" : ils copient une liste vue en ligne, ajustent quelques cartes selon leur intuition et espèrent que ça marche. Le problème, c'est que l'intuition se trompe souvent sur des questions pourtant très concrètes : *"si je passe de 2 à 3 exemplaires de cette carte, à quel point ça change vraiment mes chances de main jouable ?"*, *"est-ce que mon deck dépend d'une poignée de cartes précises, ou l'ouverture est-elle bien répartie ?"*, *"dois-je vraiment sider cette carte contre ce matchup, ou est-ce que je perds plus que je ne gagne ?"* — ce sont des questions de probabilités, pas de ressenti et le cerveau humain est notoirement mauvais pour estimer des probabilités à l'instinct.
 
-ThirdEyeInsight remplace l'intuition par le calcul : au lieu de deviner, il simule des dizaines de milliers de mains d'ouverture et donne des chiffres exacts. Le but n'est pas de dire "ce deck est bon ou mauvais" — c'est de donner aux joueurs les moyens de comprendre **pourquoi** un ratio de cartes fonctionne ou pas, de comparer objectivement deux versions d'un side deck avant un tournoi, et de repérer les points faibles d'une liste (trop de bricks, un starter trop peu redondant, une main morte trop fréquente) avant de les découvrir en partie.
+ThirdEyeInsight remplace l'intuition par le calcul : au lieu de deviner, il simule des centaines de milliers de mains d'ouverture et donne des chiffres exacts. Le but n'est pas de dire "ce deck est bon ou mauvais", c'est de donner aux joueurs les moyens de comprendre **pourquoi** un ratio de cartes fonctionne ou pas, de comparer objectivement deux versions d'un side deck avant un tournoi et de repérer les points faibles d'une liste (trop de bricks, un starter trop peu redondant, une main morte trop fréquente) avant de les découvrir en partie.
 
 ## Comprendre les rôles de carte
 
@@ -14,11 +14,11 @@ Le cœur de l'outil repose sur un principe simple : chaque carte du deck se voit
 
 | Rôle | Ce que ça représente |
 |---|---|
-| **Starter** | Une carte capable de lancer ton combo/ta stratégie à elle seule — celle(s) que tu as besoin de piocher pour "faire ton tour" |
-| **Extender** | Une carte qui prolonge un combo déjà lancé par un Starter, mais qui ne démarre rien toute seule |
+| **Starter** | Une carte capable de lancer ton combo/ta stratégie à elle seule (celle que tu as besoin de piocher pour "faire ton tour") |
+| **Extender** | Une carte qui prolonge un combo déjà lancé par un Starter, mais qui ne démarre (presque) rien toute seule |
 | **Handtrap** | Une carte jouable depuis la main pendant le tour adverse, pour perturber son combo |
-| **Anti-Handtrap** | Une carte qui protège contre les handtraps adverses (négation, cartes non affectées, etc.) |
-| **Boardbreaker** | Une carte utilisée en Second pour percer le board/backrow adverse |
+| **Anti-Handtrap** | Une carte qui protège contre les handtraps adverses ("Appelé par la Tombe", 'Désignateur de la Suppression", etc.) |
+| **Boardbreaker** | Une carte utilisée en Second pour percer le board/backrow adverse ("Raigeki", 'Plumeau de Dame Harpie", etc.)|
 | **Brick** | Une carte "morte" en main si elle est isolée — inutile sans le reste de sa combo, ou situationnelle |
 | **Pioche** | Une carte qui fait piocher des cartes supplémentaires si elle est en main d'ouverture (ex. Pot of Desires, Upstart Goblin) |
 
@@ -49,21 +49,21 @@ Cette classification n'a besoin d'être faite qu'une fois par carte : elle est e
 <table>
   <tr>
     <td align="center" width="50%">
-      <img src="screenshots/construction.png" width="400"/><br/>
+      <img width="1117" height="686" alt="image" src="https://github.com/user-attachments/assets/5edee46f-3af2-402d-8bcf-f9d4ba5e3a1b" /><br/>
       <sub><b>Construction du Deck</b></sub>
     </td>
     <td align="center" width="50%">
-      <img src="screenshots/combos.png" width="400"/><br/>
+      <img width="1118" height="238" alt="image" src="https://github.com/user-attachments/assets/7be81c7d-7354-4a31-a596-83eacaa2b12c" /><br/>
       <sub><b>Combos Starters</b></sub>
     </td>
   </tr>
   <tr>
     <td align="center" width="50%">
-      <img src="screenshots/scenarios.png" width="400"/><br/>
+      <img width="1116" height="680" alt="image" src="https://github.com/user-attachments/assets/093fcd83-7559-4eb6-bdc8-1f3ae1725735" /><br/>
       <sub><b>Scénarios</b></sub>
     </td>
     <td align="center" width="50%">
-      <img src="screenshots/analyse.png" width="400"/><br/>
+      <img width="1121" height="673" alt="image" src="https://github.com/user-attachments/assets/2fc5d906-33fc-474c-8b4f-29f40149614c" /><br/>
       <sub><b>Analyse</b></sub>
     </td>
   </tr>
