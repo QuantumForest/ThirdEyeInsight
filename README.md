@@ -2,8 +2,33 @@
 
 **Analyseur de decks Yu-Gi-Oh! — probabilités, cohérence et simulation de main d'ouverture.**
 
-ThirdEyeInsight est une application de bureau qui aide à construire et affiner un deck Yu-Gi-Oh! en donnant une vision chiffrée de sa cohérence : quelle est la probabilité réelle d'ouvrir avec un starter ? De survivre à une main morte ? De tenir en Second grâce à tes handtraps ? 
-L'outil simule des centaines de milliers de mains et calcule les probabilités exactes.
+## Pourquoi cet outil ?
+
+La plupart des joueurs construisent leur deck "au feeling" : ils copient une liste vue en ligne, ajustent quelques cartes selon leur intuition, et espèrent que ça marche. Le problème, c'est que l'intuition se trompe souvent sur des questions pourtant très concrètes — *"si je passe de 2 à 3 exemplaires de cette carte, à quel point ça change vraiment mes chances de main jouable ?"*, *"est-ce que mon deck dépend d'une poignée de cartes précises, ou l'ouverture est-elle bien répartie ?"*, *"dois-je vraiment sider cette carte contre ce matchup, ou est-ce que je perds plus que je ne gagne ?"* — ce sont des questions de probabilités, pas de ressenti, et le cerveau humain est notoirement mauvais pour estimer des probabilités à l'instinct.
+
+ThirdEyeInsight remplace l'intuition par le calcul : au lieu de deviner, il simule des dizaines de milliers de mains d'ouverture et donne des chiffres exacts. Le but n'est pas de dire "ce deck est bon ou mauvais" — c'est de donner aux joueurs les moyens de comprendre **pourquoi** un ratio de cartes fonctionne ou pas, de comparer objectivement deux versions d'un side deck avant un tournoi, et de repérer les points faibles d'une liste (trop de bricks, un starter trop peu redondant, une main morte trop fréquente) avant de les découvrir en partie.
+
+## Comprendre les rôles de carte
+
+Le cœur de l'outil repose sur un principe simple : chaque carte du deck se voit assigner un ou plusieurs **rôles**, qui décrivent sa fonction dans la stratégie du deck plutôt que son texte brut. C'est cette classification qui permet ensuite tous les calculs de probabilité par catégorie.
+
+| Rôle | Ce que ça représente |
+|---|---|
+| **Starter** | Une carte capable de lancer ton combo/ta stratégie à elle seule — celle(s) que tu as besoin de piocher pour "faire ton tour" |
+| **Extender** | Une carte qui prolonge un combo déjà lancé par un Starter, mais qui ne démarre rien toute seule |
+| **Handtrap** | Une carte jouable depuis la main pendant le tour adverse, pour perturber son combo |
+| **Anti-Handtrap** | Une carte qui protège contre les handtraps adverses (négation, cartes non affectées, etc.) |
+| **Boardbreaker** | Une carte utilisée en Second pour percer le board/backrow adverse |
+| **Brick** | Une carte "morte" en main si elle est isolée — inutile sans le reste de sa combo, ou situationnelle |
+| **Pioche** | Une carte qui fait piocher des cartes supplémentaires si elle est en main d'ouverture (ex. Pot of Desires, Upstart Goblin) |
+
+Une carte peut cumuler plusieurs rôles à la fois (une carte peut très bien être Starter ET Handtrap si son texte le permet) — rien n'oblige à n'en choisir qu'un seul.
+
+### Comment classer une carte dans l'application
+
+Dans la page **Construction du Deck**, recherche une carte puis, dans le panneau "Ajout / Édition de carte" qui apparaît, coche la ou les cases correspondant à son rôle avant de l'ajouter au deck. Pour une carte de rôle **Pioche**, un champ supplémentaire permet d'indiquer combien de cartes elle fait piocher.
+
+Cette classification n'a besoin d'être faite qu'une fois par carte : elle est ensuite utilisée automatiquement dans tous les calculs de probabilité, la simulation de main d'ouverture, la détection de main morte, et l'analyse de concentration.
 
 ## Fonctionnalités
 
@@ -21,7 +46,30 @@ L'outil simule des centaines de milliers de mains et calcule les probabilités e
 
 ## Aperçu
 
-*(Ajoute ici une ou deux captures d'écran de l'application — page Construction du Deck et page Analyse sont les plus parlantes.)*
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="screenshots/construction.png" width="400"/><br/>
+      <sub><b>Construction du Deck</b></sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="screenshots/combos.png" width="400"/><br/>
+      <sub><b>Combos Starters</b></sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="screenshots/scenarios.png" width="400"/><br/>
+      <sub><b>Scénarios</b></sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="screenshots/analyse.png" width="400"/><br/>
+      <sub><b>Analyse</b></sub>
+    </td>
+  </tr>
+</table>
+
+> Pour que ce tableau s'affiche : crée un dossier `screenshots/` à la racine du dépôt, et places-y 4 captures d'écran nommées exactement `construction.png`, `combos.png`, `scenarios.png` et `analyse.png` (ou change les noms ci-dessus pour correspondre aux tiens). Si tu n'as que 2 captures pour l'instant, retire simplement la deuxième ligne `<tr>...</tr>` du tableau.
 
 ## Installation
 
@@ -29,9 +77,9 @@ L'outil simule des centaines de milliers de mains et calcule les probabilités e
 
 Pas besoin d'installer Python : télécharge directement le `.exe` depuis la page [**Releases**](../../releases) du dépôt, dans un dossier dédié, et lance-le.
 
-> Place l'exécutable dans son propre dossier avant de le lancer pour la première fois — l'application y créera automatiquement `decks/`, `exports/`, `imports/` et `.cache/` à l'intérieur.
+> Place l'exécutable dans son propre dossier avant de le lancer pour la première fois — l'application y créera automatiquement `decks/`, `exports/`, `imports/` et `.cache/` juste à côté. Aucune installation, aucune trace ailleurs sur le système.
 
-### Depuis les sources (pour développer)
+### Depuis les sources (pour développer ou sur Linux)
 
 #### Prérequis
 
@@ -132,6 +180,10 @@ pytest tests/ -v
 ## Remerciements
 
 - [YGOPRODeck](https://ygoprodeck.com/) pour son API publique de base de cartes et d'images, utilisée conformément à ses [règles d'usage](https://ygoprodeck.com/api-guide/).
+
+## Licence
+
+*(À compléter — MIT, GPL, ou autre selon ton choix.)*
 
 ---
 
