@@ -1,0 +1,12 @@
+# YGOProb - dépendances Python
+# Installer avec : pip install -r requirements.txt (dans un venv, voir README/instructions)
+
+pandas>=2.0
+numpy>=1.26
+requests>=2.31
+scipy>=1.11
+customtkinter>=5.2
+Pillow>=10.0
+
+# Tests (optionnel pour l'exécution de l'app, nécessaire pour `pytest`)
+pytest>=8.0
