@@ -152,7 +152,6 @@ ThirdEyeInsight/
 ├── translations.py       # Traductions (FR/EN/ES/DE/IT/PT)
 ├── requirements.txt
 ├── backend/               # Persistance, sécurité, appels API, import/export YDK
-├── tests/                 # Suite de tests (pytest)
 ├── decks/                 # Créé au premier lancement — tes decks
 ├── exports/ , imports/    # Créés au premier lancement — échanges .ydk
 └── .cache/                 # Créé au premier lancement — base de cartes, images, logs
@@ -176,6 +175,10 @@ pytest tests/ -v
 ## Remerciements
 
 - [YGOPRODeck](https://ygoprodeck.com/) pour son API publique de base de cartes et d'images, utilisée conformément à ses [règles d'usage](https://ygoprodeck.com/api-guide/).
+
+## Licence
+
+[Voir la licence](LICENSE) pour le détail des conditions d'utilisation.
 
 ---
 
